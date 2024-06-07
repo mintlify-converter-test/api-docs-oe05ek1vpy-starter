@@ -1,0 +1,264 @@
+---
+title: "Service and Deployment Information"
+description: "Details regarding the service ID, deploy ID, and related metadata, including commit and image information."
+---
+serviceId
+
+string
+
+required
+
+The ID of the service
+
+deployId
+
+string
+
+required
+
+The ID of the deploy
+
+200
+
+OK
+
+
+===========
+
+object
+
+id
+
+string
+
+required
+
+commit
+
+object
+
+id
+
+string
+
+message
+
+string
+
+createdAt
+
+date-time
+
+image
+
+object
+
+Image information used when creating the deploy. Not present for Git-backed deploys
+
+ref
+
+string
+
+Image reference used when creating the deploy
+
+sha
+
+string
+
+SHA that the image reference was resolved to when creating the deploy
+
+registryCredential
+
+string
+
+Name of credential used to pull the image, if provided
+
+status
+
+string
+
+`created` `build_in_progress` `update_in_progress` `live` `deactivated` `build_failed` `update_failed` `canceled` `pre_deploy_in_progress` `pre_deploy_failed`
+
+trigger
+
+string
+
+`api` `blueprint_sync` `deploy_hook` `deployed_by_render` `manual` `other` `new_commit` `rollback` `service_resumed` `service_updated`
+
+finishedAt
+
+date-time
+
+createdAt
+
+date-time
+
+updatedAt
+
+date-time
+
+401
+
+Authorization information is missing or invalid.
+
+
+=========================================================
+
+object
+
+id
+
+string
+
+message
+
+string
+
+403
+
+You do not have permissions for the requested resource.
+
+
+================================================================
+
+object
+
+id
+
+string
+
+message
+
+string
+
+404
+
+Unable to find the requested resource.
+
+
+===============================================
+
+object
+
+id
+
+string
+
+message
+
+string
+
+406
+
+Unable to generate preferred media types as specified by Accept request header.
+
+
+========================================================================================
+
+object
+
+id
+
+string
+
+message
+
+string
+
+410
+
+The requested resource is no longer available.
+
+
+=======================================================
+
+object
+
+id
+
+string
+
+message
+
+string
+
+429
+
+Rate limit has been surpassed.
+
+
+=======================================
+
+object
+
+id
+
+string
+
+message
+
+string
+
+500
+
+An unexpected server error has occurred.
+
+
+=================================================
+
+object
+
+id
+
+string
+
+message
+
+string
+
+503
+
+Server currently unavailable.
+
+
+======================================
+
+object
+
+id
+
+string
+
+message
+
+string
+
+Updated 7 months ago
+
+* * *
+
+ShellNodeRubyPHPPython
+
+xxxxxxxxxx
+
+1
+
+curl \--request GET \\
+
+2
+
+     \--url https://api.render.com/v1/services/serviceId/deploys/deployId \\
+
+3
+
+     \--header 'accept: application/json'
+
+Click `Try It!` to start a request and see the response here! Or choose an example:
+
+application/json
+
+200401403404406410429500503
+
+Updated 7 months ago
+
+* * *
